@@ -1,4 +1,4 @@
 # GPM
 Simple demonstration of Gaussian Process preintegration
 
-__Soon to be uploaded__
+__To be uploaded 1st of June 2020__

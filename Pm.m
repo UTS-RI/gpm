@@ -38,10 +38,10 @@ function [ pm ] = Pm(  acc, gyr, time, start_time, query_time,...
     % Iterative preintegration
     for i = 1:length(d_t)
         acc_rot = d_R*((acc_raw(i,:))' - acc_bias);
-        d_v = d_v + (acc_rot' * d_t(i));
         d_p = d_p...
             + (d_v * d_t(i))...
             + (acc_rot' * d_t(i) * d_t(i))/2;
+        d_v = d_v + (acc_rot' * d_t(i));
         
         e_R = ExpMap((gyr_raw(i,:) - gyr_bias') * d_t(i));
         j_r = So3RightJacobian((gyr_raw(i,:) - gyr_bias') * d_t(i));
